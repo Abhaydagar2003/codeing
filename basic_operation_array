@@ -1,0 +1,30 @@
+Question 1:->Given an array A of size N, your task is to do some operations, i.e., search an element x, insert an element y at index yi, and delete the first occurence of element z in the array by completing the functions. 
+Answer :->
+2	  public static int searchElement(int arr[],int x){
+3	    for(int i=0;i<arr.length;i++){
+4	       if(arr[i]==x){
+5	         return i;
+6	        }
+7	      }
+8	       return -1;
+9	    }
+10	  
+11	  public static void insertElement(int arr[],int x, int xi){
+12	    if(xi<0 || xi>=arr.length){
+13	      System.out.println("invalid input to insert element");
+14	      return ;
+15	      }
+16	      arr[xi]=x;
+17	    }
+18	  
+19	  public static void deleteElement(int arr[],int z){
+20	    int index= searchElement(arr,z);
+21	    if(index !=-1){
+22	      for(int i=index;i<arr.length-1;i++){
+23	        arr[i]=arr[i+1];
+24	        }
+25	        arr[arr.length-1]=0;
+26	      }else{
+27	        System.out.println("element not found");
+28	        }
+29	    }  
